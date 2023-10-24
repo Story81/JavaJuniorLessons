@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             String string1 = "55";
-            String string2 = "5";
+            String string2 = "0";
             StringUtilsImpl stringUtils = new StringUtilsImpl();
             double result = stringUtils.div(string1, string2);
             System.out.println("1. Результат деления:");
