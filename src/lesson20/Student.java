@@ -25,6 +25,7 @@ public class Student {
 //    public void  addDiscipline (Discipline discipline) {
 //        disciplines.add(discipline);
 //    }
+    // коммент
     public void addStudent (Student student){
         students.add(student);
     }
