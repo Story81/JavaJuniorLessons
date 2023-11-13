@@ -1,14 +1,11 @@
 package lesson14;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.*;
 
-public class CopyWithOneByte implements CopyUtils{
+public class CopyWithOneByte implements CopyUtils {
     @Override
-    public void copy(String from, String to) {
-        try {
+    public void copy(String from, String to) throws IOException {
+
             //полный путь C:\Users\CASPER\Desktop\Шульга.jpg
             //относительный путь (относительно нашей папки проекта erste.jpg")
             BufferedInputStream bis = new BufferedInputStream(new FileInputStream(from));
@@ -25,9 +22,6 @@ public class CopyWithOneByte implements CopyUtils{
             bis.close();
             bos.flush(); //освобождаем буфер (принудительно записываем содержимое буфера в файл)
             bos.close(); //закрываем поток записи (обязательно!)
-        }
-        catch (java.io.IOException e) {
-            e.printStackTrace();
-        }
+
     }
 }

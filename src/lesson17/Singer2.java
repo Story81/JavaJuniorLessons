@@ -6,15 +6,13 @@ public class Singer2 extends Thread {
         while (true) {
 
             try {
-                synchronized (Monitors.MICROPHONE){
-                    Monitors.MICROPHONE.notify();
-                }
-                synchronized (Monitors.MICROPHONE) {
+                synchronized (Monitors.MICROPHONE) {              // критическая зона. stringer2 спит
                     Monitors.MICROPHONE.wait();
                 }
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
+
 
             for (int i = 0; i < 3; i++) {
                 System.out.println("----------- FA");
@@ -24,7 +22,7 @@ public class Singer2 extends Thread {
                     e.printStackTrace();
                 }
             }
-            synchronized (Monitors.MICROPHONE){
+            synchronized (Monitors.MICROPHONE){            // критическая зона. разбудит singer1
                 Monitors.MICROPHONE.notify();
             }
         }

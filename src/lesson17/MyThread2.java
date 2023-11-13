@@ -1,12 +1,12 @@
 package lesson17;
 
-public class MyThred2 implements  Runnable{
+public class MyThread2 implements  Runnable{
     @Override
     public void run() {
         for(int i=100; i<120;i++){
             System.out.println(i+" - "+Thread.currentThread().getName());
             try {
-                Thread.sleep(700);
+                Thread.sleep(800);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
